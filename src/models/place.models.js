@@ -3,9 +3,9 @@ import mongoose from 'mongoose'
 const placeSchema = mongoose.Schema({
     owner : {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'user'
+        ref: 'User'
     },
-    name: {
+    title: {
         type : String,
         required: true
     },
@@ -25,14 +25,17 @@ const placeSchema = mongoose.Schema({
     perks: [{
         type: String,
     },],
+    price: {
+        type: Number,
+    },
     extraInfo: {
         type: String,
     },
     checkIn: {
-        type: Number,
+        type: String,
     },
     checkOut: {
-        type: Number,
+        type: String,
     },
     maxGuests: {
         type: Number
