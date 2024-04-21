@@ -5,6 +5,7 @@ import cookieParser from 'cookie-parser'
 import connectDB from './db/index.js'
 import userRouter from './routes/user.routes.js'
 import placeRouter from './routes/place.route.js'
+import bookingRouter from './routes/booking.route.js'
 
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
@@ -32,6 +33,7 @@ app.use('/uploads', express.static(__dirname+'/uploads'));
 // routes
 app.use('/api/user', userRouter);
 app.use('/api/place', placeRouter);
+app.use('/api/booking', bookingRouter);
 
 // connecting DB
 connectDB()
